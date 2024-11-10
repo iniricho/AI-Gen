@@ -1,35 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {useState} from "react";
+import { requestToGrogAI } from './utils/groq';
+import { Prism as SyntaxHighlight } from "react-syntax-highlighter";
+import { darcula } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import './App.css';
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [data, setData] = useState("");
 
+  const handleSubmit = async () => {
+    const ai = await requestToGrogAI(content.value);
+    console.log({ ai });
+    setData(ai);
+  };
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <main className='flex flex-col min-h-[80vh] justify-center items-center max-w-xl w-full mx-auto'>
+      <h1 className='text-4xl text-teal-500'>AI GEN</h1>
+      <form className='flex flex-col gap-4 py-4 w-full'>
+        <input 
+        placeholder='Ketik disini..'
+        className='py-2 px-4 text-md rounded-md' 
+        id='content'
+        type='text'
+        />
+        <button 
+        onClick={handleSubmit}
+        type='button'
+        className='bg-teal-500 py-2 px-4 font-bold text-white rounded-md hover:bg-teal-600'>
+          Kirim
+          </button>
+      </form>
+      <div className="max-w-xl w-full mx-auto">
+        { data ? (
+      <SyntaxHighlight
+      language="magma" 
+      style={darcula} 
+      wrapLongLines={true}
+      lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}}
+      >
+        {data}
+      </SyntaxHighlight>
+        ) : null }
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
-
+    </main>
+  );
+};
 export default App
