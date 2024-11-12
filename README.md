@@ -20,6 +20,30 @@ To get started with this project, follow these steps:
     ```bash
     VITE_GROQ=USE_YOUR_OWN_API_KEY
     ```
+4. you can change the models on src/utils/Groq.js file:
+    ```bash
+    import { Groq } from "groq-sdk";
+
+    const GROQ_API = import.meta.env.VITE_GROQ;
+    
+    const groq = new Groq({
+      apiKey: GROQ_API,
+      dangerouslyAllowBrowser: true,
+    });
+    
+    export const requestToGrogAI = async (content) => {
+        const reply = await groq.chat.completions.create ({
+            messages: [
+                {
+                role: "user",
+                content,
+            },
+        ],
+            model: "llama3-8b-8192", //CHANGE HERE
+        });
+        return reply.choices[0].message.content;
+    };
+    ```
     
 ## Usage
 
