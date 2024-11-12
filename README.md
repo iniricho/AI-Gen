@@ -26,7 +26,7 @@ To get started with this project, follow these steps:
 After installation, you can run the app with the following npm command:
 
 ### Run in development Mode:
-    ```bash
     npm run dev
-    ```
-Feel free to improve the codes
+
+
+Feel free to improve the codes.
