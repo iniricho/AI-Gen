@@ -39,7 +39,7 @@ To get started with this project, follow these steps:
                 content,
             },
         ],
-            model: "llama3-8b-8192", //CHANGE HERE
+            model: "llama3-8b-8192", ////////CHANGE HERE////////////
         });
         return reply.choices[0].message.content;
     };
