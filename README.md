@@ -20,7 +20,7 @@ To get started with this project, follow these steps:
     ```bash
     VITE_GROQ=USE_YOUR_OWN_API_KEY
     ```
-4. you can change the models on src/utils/groq.js file:
+4. you can change the models that is supported on Groq Console (see docs, [https://console.groq.com/docs/models](https://console.groq.com/docs/models)) on src/utils/groq.js file:
     ```bash
     import { Groq } from "groq-sdk";
 
@@ -54,6 +54,6 @@ After installation, you can run the app with the following npm command:
 
 
 Note: <br />
-$\color{red}{DO \space NOT \space USE \space dangerouslyAllowBrowser: \space true, \space IF \space YOU \space ON \space PRODUCTION \space MODE!!}$
+**$\color{red}{DO \space NOT \space USE \space dangerouslyAllowBrowser: \space true, \space IF \space YOU \space ON \space PRODUCTION \space MODE!!}$**
 
 Feel free to improve the codes.
