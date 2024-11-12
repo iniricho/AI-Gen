@@ -20,7 +20,7 @@ To get started with this project, follow these steps:
     ```bash
     VITE_GROQ=USE_YOUR_OWN_API_KEY
     ```
-4. you can change the models on src/utils/Groq.js file:
+4. you can change the models on src/utils/groq.js file:
     ```bash
     import { Groq } from "groq-sdk";
 
