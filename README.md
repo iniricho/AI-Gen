@@ -53,7 +53,7 @@ After installation, you can run the app with the following npm command:
     npm run dev
 
 
-Note:
-$\color{red}{DO NOT USE  dangerouslyAllowBrowser: true, IF YOU ON PRODUCTION MODE!!}$
+Note: <br />
+$\color{red}{DO \space NOT \space USE \space dangerouslyAllowBrowser: \space true, \space IF \space YOU \space ON \space PRODUCTION \space MODE!!}$
 
 Feel free to improve the codes.
