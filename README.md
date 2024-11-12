@@ -53,4 +53,7 @@ After installation, you can run the app with the following npm command:
     npm run dev
 
 
+Note:
+$\color{red}{DO NOT USE  dangerouslyAllowBrowser: true, IF YOU ON PRODUCTION MODE!!}$
+
 Feel free to improve the codes.
